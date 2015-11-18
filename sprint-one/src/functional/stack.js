@@ -7,11 +7,13 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
+    storage[stackSize] = value;
     stackSize++;
   };
 
   someInstance.pop = function() {
     stackSize--;
+    return storage[stackSize]; 
   };
 
   someInstance.size = function() {
