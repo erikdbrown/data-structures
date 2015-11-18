@@ -12,10 +12,11 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
+    stackSize--;
   };
 
   someInstance.size = function() {
-    return stackSize;
+    return stackSize < 0 ? 0 : stackSize;
   };
 
   return someInstance;
