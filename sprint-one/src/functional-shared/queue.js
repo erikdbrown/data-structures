@@ -10,7 +10,9 @@ var Queue = function() {
 };
 
 var queueMethods = {
-  dequeue : function() {}, 
+  dequeue : function() {
+    this.queueSize--;
+  }, 
   enqueue: function(value) {
     this.queueSize++;
   },
