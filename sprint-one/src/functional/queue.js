@@ -19,10 +19,7 @@ var Queue = function() {
   someInstance.dequeue = function() {
    var val = storage[counter - queueSize];
    queueSize--;
-   // delete storage[counter - queueSize];
-   if (queueSize < 0) {
-    queueSize = 0;
-   }
+   queueSize = someInstance.size();
    return val;
   };
 
