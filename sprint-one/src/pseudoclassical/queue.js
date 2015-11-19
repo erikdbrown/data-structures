@@ -6,6 +6,10 @@ var Queue = function() {
   this.storage = {};
 };
 
+Queue.prototype.enqueue = function(value) {
+  this.storage[this.counter] = value;
+  this.queueSize++;
+}
 Queue.prototype.size = function() {
   return this.queueSize < 0 ? 0 : this.queueSize;
 }
