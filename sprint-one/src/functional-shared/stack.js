@@ -2,6 +2,7 @@ var Stack = function() {
   var results = {};
 
   results.stackSize = 0;
+  results.storage = {};
   results.size = stackMethods.size;
   results.push = stackMethods.push;
   results.pop = stackMethods.pop;
@@ -12,11 +13,15 @@ var Stack = function() {
 
 var stackMethods = {
   push: function(value) {
+    this.storage[this.stackSize] = value;
     this.stackSize++;
   },
 
   pop: function() {
     this.stackSize--;
+    debugger;
+    var value = this.storage[this.stackSize];
+    return value;
   },
 
   size: function() {
