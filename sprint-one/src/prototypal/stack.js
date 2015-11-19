@@ -13,9 +13,11 @@ var stackMethods = {};
 stackMethods.push = function(value) {
   this.stackSize++;
 };
-stackMethods.pop = function() {};
+stackMethods.pop = function() {
+  this.stackSize--;
+};
 stackMethods.size = function() {
-  return this.stackSize;
+  return this.stackSize < 0 ? 0 : this.stackSize;
 };
 
 
