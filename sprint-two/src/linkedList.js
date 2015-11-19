@@ -17,6 +17,13 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
+    var inList = false;
+    for (var key in this) {
+      if (this[key].value === target) {
+        inList = true;
+      }
+    }
+    return inList;
   };
 
   return list;
