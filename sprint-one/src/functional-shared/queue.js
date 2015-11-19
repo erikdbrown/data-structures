@@ -17,7 +17,7 @@ var queueMethods = {
     this.queueSize++;
   },
   size: function() {
-    return this.queueSize;
+    return this.queueSize < 0 ? 0 : this.queueSize;
   }
 };
 
