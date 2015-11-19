@@ -4,6 +4,7 @@ var Stack = function() {
   results.stackSize = 0;
   results.size = stackMethods.size;
   results.push = stackMethods.push;
+  results.pop = stackMethods.pop;
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   return results;
@@ -15,7 +16,7 @@ var stackMethods = {
   },
 
   pop: function() {
-
+    this.stackSize--;
   },
 
   size: function() {
