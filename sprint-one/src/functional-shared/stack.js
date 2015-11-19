@@ -20,7 +20,7 @@ var stackMethods = {
   },
 
   size: function() {
-    return this.stackSize;
+    return this.stackSize >= 0 ? this.stackSize : 0;
   },
 
 };
