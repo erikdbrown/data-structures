@@ -6,15 +6,26 @@ var Queue = function() {
   results.enqueue = queueMethods.enqueue;
   results.dequeue = queueMethods.dequeue;
   results.queueSize = 0;
+  results.counter = 0;
+  results.storage = {};
   return results;
 };
 
 var queueMethods = {
   dequeue : function() {
     this.queueSize--;
+    var array = [];
+    for (var key in this.storage) {
+      array.push(key);
+    }
+    var value = this.storage[array[0]];
+    delete this.storage[array[0]];
+    return value;
   }, 
   enqueue: function(value) {
     this.queueSize++;
+    this.storage[this.counter] = value;
+    this.counter++;
   },
   size: function() {
     return this.queueSize < 0 ? 0 : this.queueSize;
