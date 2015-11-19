@@ -2,9 +2,10 @@ var Queue = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   var results = {};
-  results.size = queueMethods.size;
-  results.enqueue = queueMethods.enqueue;
-  results.dequeue = queueMethods.dequeue;
+  // results.size = queueMethods.size;
+  // results.enqueue = queueMethods.enqueue;
+  // results.dequeue = queueMethods.dequeue;
+  _.extend(results, queueMethods);
   results.queueSize = 0;
   results.counter = 0;
   results.storage = {};
