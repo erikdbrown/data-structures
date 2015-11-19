@@ -3,15 +3,19 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
   var results = {};
   results.size = queueMethods.size;
-  //results.queueSize = 0;
+  results.enqueue = queueMethods.enqueue;
+  results.dequeue = queueMethods.dequeue;
+  results.queueSize = 0;
   return results;
 };
 
 var queueMethods = {
-  pop : function() {}, 
-  push: function() {},
+  dequeue : function() {}, 
+  enqueue: function(value) {
+    this.queueSize++;
+  },
   size: function() {
-    return 0;
+    return this.queueSize;
   }
 };
 
