@@ -2,11 +2,24 @@
 
 var HashTable = function() {
   this._limit = 8;
+  // var obj = Object.create(linkedList);
   this._storage = LimitedArray(this._limit);
 };
 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
+  // var value = this._storage.get(k)
+  // if (value !== undefined) 
+    // this._storage.each(function(item, i , collection) {
+      // if (i === index) {
+        // if (collection[i][bucket] !== undefined) {
+          // collection[i][bucket] = [];
+          // collection[i][bucket][value] = collection[i]
+        // } else {
+        // collection[i][bucket][k] === v;
+      // }
+    // else 
+      // })
   this._storage.set(index, v);
 };
 
