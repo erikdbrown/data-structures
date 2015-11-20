@@ -15,8 +15,30 @@ treeMethods.addChild = function(value) {
   this.children.push(created);  // fix me
 };
 
-treeMethods.contains = function(target) {
+treeMethods.contains = function(target, isTrue) {
+  // var isFound = false; clure variable
+
+  // new function closure function(target)
+  // target is a value
+  // this.value === target ???
+  isTrue = isTrue || false;
+  if (this.value === target) {
+    // if true, return true
+    isTrue = true;
+    // else if this.children.length > 0 ??
+  } else if (this.children.length > 0) {
+    for (var i = 0; i < this.children.length; i++) {
+      isTrue = this.children[i].contains(target, isTrue);
+    }
+  }
+  return isTrue;
+        // if true, loop through children, return invoke contains(target)
+        // else return
+  // return false
+    
+
 };
+
 
 
 
